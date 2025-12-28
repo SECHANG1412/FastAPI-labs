@@ -2,6 +2,7 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+
 # --- GET 요청 처리 ---
 
 # 1. 루트 경로 ("/") GET 요청 처리
