@@ -65,7 +65,7 @@ items_db = {}
 async def create_item(item: Item):
     # Pydantic 모델을 통과했다는 것은 데이터가 유효하다는 의미!
     item_id = len(items_db) + 1
-    items_db[item_id] = item.model_dump()                               # Pydantic 모델을 dict로 변환하여 저장
+    items_db[item_id] = item.model_dump()  # Pydantic 모델을 dict로 변환하여 저장
     print(f"아이템 생성 완료: ID={item_id}, Data={items_db[item_id]}")
     return {"item_id": item_id, **items_db[item_id]}
 
