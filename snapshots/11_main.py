@@ -1,6 +1,6 @@
 # status 모듈 가져오기
 from fastapi import FastAPI, status 
-# fastapi.responses에서 다양한 응답 클래스들을 가져옵니다.
+# fastapi.responses에서 다양한 응답 클래스들을 가져옵니다.(Starlette 기반)
 from fastapi.responses import (
     HTMLResponse,
     PlainTextResponse,
@@ -52,7 +52,7 @@ async def redirect_to_docs():
     # /docs 경로로 리디렉션 (307 Temporary Redirect)
 
  
- # 외부 사이트로 이동
+# 외부 사이트로 이동
 @app.get("/redirect/external")
 async def redirect_external():
     return RedirectResponse(url="<https://fastapi.tiangolo.com/>", status_code=status.HTTP_302_FOUND)
